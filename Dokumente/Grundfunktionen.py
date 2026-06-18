@@ -90,3 +90,69 @@ for i in range(1,10):      # Für jedes Element i in der Liste week, führe den 
     print("Fertig")         # Dieser Code wird nach der Schleife nur einmal ausgeführt, da er nicht eingerückt ist.
     
 print("x"/n)                # Mit /n kann man einen Zeilenumbruch erzwingen.
+
+
+# crtl + K + C   # Kommentar erstellen
+# crtl + K + U   # Kommentar entfernen
+
+
+# 
+import sys
+i = 0
+for i in sys.argv:
+    print(f"Der Wert am Index{i}in sys.argv ist: {a} vom Typ {type (a)}")
+    i += 1 
+
+# So geht man mit Nuzerdateien um 
+user_name: str = input("Bitte gib Deinen Namen ein:")
+print(f"Guten Morgen {user_name}")
+
+
+def meine_tolle_addition(zahl1, zahl2):
+        summe = zahl1 + zahl2
+        return summe
+    
+tolles_ergebnis: meine_tolle_addition(zahl1=8, zahl2=4) # type: ignore
+print (f"Das tolle Ergebnis ist: {tolles_ergebnis}")
+
+def miene_tolle_adition(zahl1: float, zahl2: float) -> float:
+    return zahl1 + zahl2
+
+tolles_ergebnis: int | float = meine_tolle_addition (zahl1=1.0, zahl2=2)
+print(f"Das tolle Ergebnis ist: {tolles_ergebnis}")
+
+r = float(input ("Bitte gib einen radius ein:"))
+print (f"Deine Eingabe war{r}")
+
+#ODER
+try:
+    r = float(input ("Bitte gib einen radius ein:"))
+except Exception as e: 
+    print(f"Es ist der Fehler: {e} aufgetreten")
+    
+# Fehlerbehandlung
+
+# Wiederholt so lange bis ein True kommt
+def eingabe_als_zahl(aufforderung: str) -> float:
+    while True:
+        wert = input(aufforderung)
+        try:
+            return float(wert)
+        except ValueError:
+            print(f"'{wert}' ist keine gültige Zahl. Bitte erneut eingeben.")
+
+import time                     # Lädt das time-Modul, damit man Zeit-Funktionen benutzen kann
+
+time.time()                     # Gibt die aktuelle Zeit als Sekunden seit dem 1. Januar 1970 aus
+
+print(time.time())              # Gibt die Sekunden seit dem 1. Januar 1970 aus
+
+print(time.localtime())         # Gibt die aktuelle lokale Zeit als Datenpaket aus
+
+time.localtime()                # Holt die aktuelle lokale Zeit, zeigt sie aber ohne print nicht an
+
+print(time.localtime().tm_year) # Gibt nur das aktuelle Jahr aus
+
+time.strptime("15.6.26", "%d.%m.%y")  # Wandelt "15.6.26" in ein Datum um, Jahr ist 2-stellig
+
+time.localtime().tm_year + 20   # Nimmt das aktuelle Jahr und rechnet 20 Jahre dazu

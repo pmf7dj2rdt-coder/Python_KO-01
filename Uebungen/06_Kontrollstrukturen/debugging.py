@@ -13,7 +13,8 @@
 #| `>=`      | ist grösser gleich                    | `4 >= 3`  |
 #| `in`      | ist in einer Collection enthalten     | `"e" in "Hello"` |
 
-for zahl in range(10):
+
+for zahl in range[1,1.5,2,2.5,3,3.5,4,4.5,5,5.5,6,6.5,7,7.5,8,8.5,9]:
     if zahl == 3:
         print(zahl, "juhee, drei")
     elif zahl == 7:
@@ -21,4 +22,4 @@ for zahl in range(10):
     elif zahl == 9:
         print(zahl, "yes, neun")
     else:
-        print(zahl, "nix besonderes")   
+        print(zahl, "eine andere Zahl")
