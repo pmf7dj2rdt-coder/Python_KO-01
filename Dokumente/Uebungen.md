@@ -1,4 +1,4 @@
-# Übungen
+# Erledigte Übungen
 
 ## 06-Kontrollstrukturen
 > **Übung: Pyramide**
@@ -169,3 +169,145 @@
 > - Erstelle eine einfache Benutzereingabe für die Abgabe der 6 Tipps.
 > - Führe Deine Funktion in einer `while`-Schleife solange aus, bis die sechs Zufallszahlen mit den Tipps übereinstimmen.
 > - Zähle die Durchläufe.
+
+## 09 Dateien
+
+> **Übung: Textfile lesen und schreiben**
+> `namen.py`
+>
+> 1. Erzeuge eine neue Textdatei mit dem Namen `personen.txt`.
+> 2. Schreibe einige Personen in die Liste im Format _Vorname_ _Nachname_.
+> 3. Versuche zuerst, die Namen aus der Datei `personen.txt` zu laden und nur die Nachnamen auf dem Bildschirm zu zeigen.
+> 4. Wenn das klappt, schreibe die Nachnamen in alphabetischer Reihenfolge in die Datei `nachnamen_alphabetisch.txt`.
+>
+> _Tipps:_
+>
+ > - Schritt 1 und 2 kannst Du auch manuell ohne Programmieren machen, oder Du lädst die Datei [hier herunter](https://raw.githubusercontent.com/hansmannj/py-tutorial/master/resources/personen.txt).
+ > - Nutze `.strip()` um Zeilenumbrüche zu eliminieren.
+ > - Mit `.split(" ")` können Vor- und Nachname in eine Liste mit zwei Einträgen aufgeteilt werden, die nachher über ihren Index `[]` angesprochen werden können.
+ > - `with open` mit dem Parameterwert `"w"` öffnet einen Schreibzugriff (**w**rite) auf eine Datei. Eine bestehende Datei wird überschrieben, eine neue automatisch angelegt.
+ > - Verwende `write()` oder `writelines()` um die Zeilen in das Textfile zu schreiben. Denke an die Zeilenumbrüche `\n`.
+
+***
+
+> **Übung: CSV mit Koordinaten lesen und schreiben**
+> `koordinaten_csv.py`
+>
+> In der Geomatik werden Koordinaten häufig als CSV-Dateien ausgetauscht. In dieser Übung liest Du eine solche Datei ein, berechnest die Höhendifferenz zwischen den Punkten und schreibst das Ergebnis in eine neue Datei.
+>
+> Lade die Datei `messpunkte.csv` herunter (oder lege sie manuell an):
+>
+> ```text
+> name,ost,nord,hoehe
+> Zimmerwald,2602025,1191761,898
+> Bantiger,2606806,1202974,947
+> Gurten,2600378,1196252,858
+> Chasseral,2571227,1220302,1606
+> Napf,2638131,1205962,1406
+> ```
+>
+> 1. Lies die Datei `messpunkte.csv` zeilenweise ein.
+> 2. Überspringe die Kopfzeile (`name,ost,nord,hoehe`).
+> 3. Trenne jede Zeile mit `.split(",")` in ihre Bestandteile auf.
+> 4. Berechne für jeden Punkt die Höhendifferenz zum tiefsten Punkt in der Liste.
+> 5. Schreibe die Ergebnisse in eine neue Datei `hoehendifferenzen.csv` mit dem Format `name,hoehe,differenz`.
+>
+> _Tipps:_
+>
+> - Denke daran, die Höhe mit `float()` in eine Zahl umzuwandeln.
+> - Um den tiefsten Punkt zu finden, kannst Du zuerst alle Höhen in eine Liste speichern und dann `min()` verwenden.
+> - Runde die Differenz mit `round()` auf eine Dezimalstelle.
+>
+> _Die `messpunkte.csv` begegnet euch in Kapitel 12 wieder - dann laden wir sie mit zwei Zeilen GeoPandas und stellen alle Punkte auf einer interaktiven Karte dar. Lohnt sich also, die Datei zu behalten._
+
+## 10 Zeit und Datum
+> **Übung: Geburtstag**
+> `geburtstag.py`
+>
+> Schreibe ein Programm mit interaktiver Benutzereingabe, das folgende Fragen beantwortet:
+>
+> - An welchem Wochentag wurdest Du geboren?
+> - An welchem Wochentag feierst Du Deinen 30. Geburtstag?
+
+***
+
+> **Übung: Datensatz-Alter**
+> `datensatz_alter.py`
+>
+> In der Geomatik wird oft angegeben, wann ein Datensatz erstellt oder zuletzt aktualisiert wurde.
+>
+> Schreibe ein Skript, das:
+>
+> 1. Den Benutzer nach dem Aufnahmedatum eines Datensatzes fragt (Format: `TT.MM.JJJJ`).
+> 2. Berechnet, wie viele Tage der Datensatz alt ist.
+> 3. Eine Warnung ausgibt, falls der Datensatz älter als 365 Tage ist:
+>    `"Achtung: Datensatz ist älter als 1 Jahr – bitte auf Aktualität prüfen."`
+>
+> _Tipp:_ Nutze `try`/`except` um ungültige Datumseingaben abzufangen.
+
+## 11 Web und APIs
+> **Übung: Koordinatentransformation**  
+> `koordinaten.py`
+>
+> Das Gebäude von swisstopo hat die WGS84-Koordinaten 46.928°N 7.452°E. Unser Schulungsgebäude liegt bei der LV95-Koordinate 2600052m, 1198762m.
+>
+> - Wie weit sind die beiden Gebäude (Luftlinie) voneinander entfernt?
+> - Runde das Resultat auf 10m genau
+>
+> _Tipps:_
+>
+> - gehe schrittweise vor
+> - programmiere zuerst die Transformation
+> - berechne danach die Distanz (Pythagoras)
+>
+***
+> **Übung: Webdienste BGDI**  
+> `adresse.py`
+>
+> 1. Studiere die [Dokumentation zu den Webdiensten der Bundes-Geodateninfrastruktur](https://docs.geo.admin.ch/access-data/search.html#search).
+> 2. Versuche zu einer beliebigen Adresse die Koordinaten zu erhalten.
+>    Beispiel-URL: [SearchServer?searchText=wabern&type=locations](https://docs.geo.admin.ch/access-data/search.html#examples)
+
+
+## Geodaten mit Python
+> **Übung: Messpunkte auf der Karte**
+> `geodaten.py`
+>
+> 1. Lade `messpunkte.csv` (aus Kapitel 8) und erstelle daraus einen GeoDataFrame in LV95.
+> 2. Projiziere die Punkte nach WGS84.
+> 3. Erstelle eine folium-Karte mit den Messpunkten. Zeige im Tooltip Name und Höhe an.
+> 4. Speichere die Karte als `messpunkte.html` und öffne sie im Browser.
+
+***
+
+> **Übung: Räumlicher Join mit Messgebieten**
+> `geodaten_zonen.py`
+>
+> 1. Lade zusätzlich `messgebiete.geojson` als GeoDataFrame.
+> 2. Führe einen räumlichen Join (`gpd.sjoin`) durch: welcher Messpunkt liegt in welcher Zone?
+> 3. Gib aus, welche Punkte keiner Zone zugeordnet werden konnten.
+> 4. Zeige die Zonen und Punkte zusammen auf einer folium-Karte. Färbe die Zonen unterschiedlich ein (`folium.GeoJson`).
+>
+> _Tipp:_ Mit `how="left"` im `sjoin` bleiben auch Punkte ohne Zone im Ergebnis (mit `NaN` in der Zonenspalte).
+
+## QGIS Python
+> **Übung: Kantone auswerten**
+> `qgis_kantone.py`
+>
+> 1. Öffne QGIS und die Python-Konsole.
+> 2. Lade den Kantonsgrenz-Layer von swisstopo mit dem Code aus dem POC oben.
+> 3. Zeige alle Spaltennamen mit `layer.fields().names()`.
+> 4. Gib die 5 flächengrössten Kantone aus (berechne die Fläche mit `feature.geometry().area()`).
+> 5. Selektiere alle Kantone, die an den Kanton Bern grenzen.
+>
+> _Tipp:_ Mit `layer.fields().names()` siehst Du die genauen Spaltennamen - Gross-/Kleinschreibung zählt.
+
+***
+
+> **Übung: Messpunkte laden**
+> `qgis_messpunkte.py`
+>
+> 1. Lade `messpunkte.csv` direkt in QGIS (Layer → Layer hinzufügen → Getrennte Textdatei).
+> 2. Öffne die Python-Konsole.
+> 3. Gib für jeden Messpunkt Name und Höhe aus.
+> 4. Berechne mit Python die Höhendifferenz zwischen dem höchsten und tiefsten Punkt.

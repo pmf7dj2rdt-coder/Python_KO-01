@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_b3d5e319d192db6610c430de0a9822ca {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_b3d5e319d192db6610c430de0a9822ca" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_b3d5e319d192db6610c430de0a9822ca = L.map(
+                "map_b3d5e319d192db6610c430de0a9822ca",
+                {
+                    center: [46.98176533452738, 7.487253888073257],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_9e6565fd74dd32ef4bde93c4b1734acc = L.tileLayer(
+                "https://wmts.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/3857/{z}/{x}/{y}.jpeg",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "swisstopo",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_9e6565fd74dd32ef4bde93c4b1734acc.addTo(map_b3d5e319d192db6610c430de0a9822ca);
+        
+    
+        function geo_json_5a4d2e51ebeb257efd306e5f3a6f031d_styler(feature) {
+            switch(feature.id) {
+                case "0": 
+                    return {"color": "#45b839", "fillColor": "#45b839", "fillOpacity": 0.5, "weight": 1};
+                case "1": 
+                    return {"color": "#3b4968", "fillColor": "#3b4968", "fillOpacity": 0.5, "weight": 1};
+                default:
+                    return {"color": "#aa177a", "fillColor": "#aa177a", "fillOpacity": 0.5, "weight": 1};
+            }
+        }
+
+        function geo_json_5a4d2e51ebeb257efd306e5f3a6f031d_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_5a4d2e51ebeb257efd306e5f3a6f031d = L.geoJson(null, {
+                onEachFeature: geo_json_5a4d2e51ebeb257efd306e5f3a6f031d_onEachFeature,
+            
+                style: geo_json_5a4d2e51ebeb257efd306e5f3a6f031d_styler,
+            ...{
+}
+        });
+
+        function geo_json_5a4d2e51ebeb257efd306e5f3a6f031d_add (data) {
+            geo_json_5a4d2e51ebeb257efd306e5f3a6f031d
+                .addData(data);
+        }
+            geo_json_5a4d2e51ebeb257efd306e5f3a6f031d_add({"bbox": [7.372783952719588, 46.72350462262133, 8.228756417934143, 47.08598919367132], "features": [{"bbox": [7.372783952719588, 46.90563888613226, 7.767858540048917, 47.08598919367132], "geometry": {"coordinates": [[[7.373007607690566, 46.90608737368675], [7.766759451035191, 46.90563888613226], [7.767858540048917, 47.08553922348994], [7.372783952719588, 47.08598919367132], [7.373007607690566, 46.90608737368675]]], "type": "Polygon"}, "id": "0", "properties": {"code": "N", "name": "Zone Nord", "zone_id": "0"}, "type": "Feature"}, {"bbox": [7.373007607690566, 46.72573331353263, 7.766759451035191, 46.90608737368675], "geometry": {"coordinates": [[[7.373229761345373, 46.72618032839059], [7.765667684583499, 46.72573331353263], [7.766759451035191, 46.90563888613226], [7.373007607690566, 46.90608737368675], [7.373229761345373, 46.72618032839059]]], "type": "Polygon"}, "id": "1", "properties": {"code": "S", "name": "Zone S\u00fcd", "zone_id": "1"}, "type": "Feature"}, {"bbox": [7.765667684583499, 46.72350462262133, 8.228756417934143, 47.08553922348994], "geometry": {"coordinates": [[[7.765667684583499, 46.72573331353263], [8.223489965798846, 46.72350462262133], [8.228756417934143, 47.083295725660015], [7.767858540048917, 47.08553922348994], [7.765667684583499, 46.72573331353263]]], "type": "Polygon"}, "id": "2", "properties": {"code": "O", "name": "Zone Ost", "zone_id": "2"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_5a4d2e51ebeb257efd306e5f3a6f031d.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature => {
+        if (feature === null) {
+            return '';
+        } else if (typeof(feature)=='object') {
+            return JSON.stringify(feature);
+        } else {
+            return feature;
+        }
+    }
+    let fields = ["zone_id"];
+    let aliases = ["Zone:"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{
+  "sticky": true,
+  "className": "foliumtooltip",
+});
+                     
+    
+            geo_json_5a4d2e51ebeb257efd306e5f3a6f031d.addTo(map_b3d5e319d192db6610c430de0a9822ca);
+        
+    
+            var marker_cluster_ac315859011e690022ccbba66a13dbe2 = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_9bcadaf696657a37f289ffdef72546fe = L.circleMarker(
+                [46.87696822762355, 7.465197704473807],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ac315859011e690022ccbba66a13dbe2);
+        
+    
+        var popup_90c0a7d2c117daf98287a58030444a36 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_573bb5b92f7876a5fe2d9607d14f1c3e = $(`<div id="html_573bb5b92f7876a5fe2d9607d14f1c3e" style="width: 100.0%; height: 100.0%;">Punkt index: 0<br>Zone: 1</div>`)[0];
+                popup_90c0a7d2c117daf98287a58030444a36.setContent(html_573bb5b92f7876a5fe2d9607d14f1c3e);
+            
+        
+
+        circle_marker_9bcadaf696657a37f289ffdef72546fe.bindPopup(popup_90c0a7d2c117daf98287a58030444a36)
+        ;
+
+        
+    
+    
+            circle_marker_9bcadaf696657a37f289ffdef72546fe.bindTooltip(
+                `<div>
+                     Zimmerwald: 898 m.ü.M.
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b74d1c3e7ab2c2668c5d1893d1930f44 = L.circleMarker(
+                [46.97780016859498, 7.528080915807405],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ac315859011e690022ccbba66a13dbe2);
+        
+    
+        var popup_1440d1c889a5abe2eb2f8c612f5c59ae = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5fbcbd4eb86d3abb530d0b9308b2bb10 = $(`<div id="html_5fbcbd4eb86d3abb530d0b9308b2bb10" style="width: 100.0%; height: 100.0%;">Punkt index: 1<br>Zone: 0</div>`)[0];
+                popup_1440d1c889a5abe2eb2f8c612f5c59ae.setContent(html_5fbcbd4eb86d3abb530d0b9308b2bb10);
+            
+        
+
+        circle_marker_b74d1c3e7ab2c2668c5d1893d1930f44.bindPopup(popup_1440d1c889a5abe2eb2f8c612f5c59ae)
+        ;
+
+        
+    
+    
+            circle_marker_b74d1c3e7ab2c2668c5d1893d1930f44.bindTooltip(
+                `<div>
+                     Bantiger: 947 m.ü.M.
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a15e76357c655d55ff076ab116361e84 = L.circleMarker(
+                [46.91736870485957, 7.443595354798481],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ac315859011e690022ccbba66a13dbe2);
+        
+    
+        var popup_c553c4d1ed89f0631be7effc69f76b34 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9d1c262d8888406f4ec1eb148b153a84 = $(`<div id="html_9d1c262d8888406f4ec1eb148b153a84" style="width: 100.0%; height: 100.0%;">Punkt index: 2<br>Zone: 0</div>`)[0];
+                popup_c553c4d1ed89f0631be7effc69f76b34.setContent(html_9d1c262d8888406f4ec1eb148b153a84);
+            
+        
+
+        circle_marker_a15e76357c655d55ff076ab116361e84.bindPopup(popup_c553c4d1ed89f0631be7effc69f76b34)
+        ;
+
+        
+    
+    
+            circle_marker_a15e76357c655d55ff076ab116361e84.bindTooltip(
+                `<div>
+                     Gurten: 858 m.ü.M.
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0fbcf1b3f0f9d4007061d7ed62b492ad = L.circleMarker(
+                [47.13307039770621, 7.0593765228852305],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ac315859011e690022ccbba66a13dbe2);
+        
+    
+        var popup_eeec094a747069b2204b2d89298d6842 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ce41bd3cd4d05ee312574fe97a85c7aa = $(`<div id="html_ce41bd3cd4d05ee312574fe97a85c7aa" style="width: 100.0%; height: 100.0%;">Punkt index: 3<br>Zone: nan</div>`)[0];
+                popup_eeec094a747069b2204b2d89298d6842.setContent(html_ce41bd3cd4d05ee312574fe97a85c7aa);
+            
+        
+
+        circle_marker_0fbcf1b3f0f9d4007061d7ed62b492ad.bindPopup(popup_eeec094a747069b2204b2d89298d6842)
+        ;
+
+        
+    
+    
+            circle_marker_0fbcf1b3f0f9d4007061d7ed62b492ad.bindTooltip(
+                `<div>
+                     Chasseral: 1606 m.ü.M.
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0b23c656613d2333dd20f6751aa4706f = L.circleMarker(
+                [47.003619173852606, 7.940018942401356],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ac315859011e690022ccbba66a13dbe2);
+        
+    
+        var popup_497291c5b9411478dce25840df727e11 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d3fe297655698027cb1a91030909a303 = $(`<div id="html_d3fe297655698027cb1a91030909a303" style="width: 100.0%; height: 100.0%;">Punkt index: 4<br>Zone: 2</div>`)[0];
+                popup_497291c5b9411478dce25840df727e11.setContent(html_d3fe297655698027cb1a91030909a303);
+            
+        
+
+        circle_marker_0b23c656613d2333dd20f6751aa4706f.bindPopup(popup_497291c5b9411478dce25840df727e11)
+        ;
+
+        
+    
+    
+            circle_marker_0b23c656613d2333dd20f6751aa4706f.bindTooltip(
+                `<div>
+                     Napf: 1406 m.ü.M.
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            marker_cluster_ac315859011e690022ccbba66a13dbe2.addTo(map_b3d5e319d192db6610c430de0a9822ca);
+        
+    
+            var layer_control_a22a6d463f36888c5ef4395c83a9a427_layers = {
+                base_layers : {
+                    "swisstopo" : tile_layer_9e6565fd74dd32ef4bde93c4b1734acc,
+                },
+                overlays :  {
+                    "Zonen" : geo_json_5a4d2e51ebeb257efd306e5f3a6f031d,
+                    "Messpunkte" : marker_cluster_ac315859011e690022ccbba66a13dbe2,
+                },
+            };
+            let layer_control_a22a6d463f36888c5ef4395c83a9a427 = L.control.layers(
+                layer_control_a22a6d463f36888c5ef4395c83a9a427_layers.base_layers,
+                layer_control_a22a6d463f36888c5ef4395c83a9a427_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_b3d5e319d192db6610c430de0a9822ca);
+
+        
+</script>
+</html>
